@@ -29,7 +29,10 @@ body {
 header {
     background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%);
     color: #fff;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 4rem 1rem 2rem 1rem;
+    /* Expanded header height and padding */
+    min-height: 120px;
+    /* Ensures header is visually larger */
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 115, 230, 0.15);
     position: relative;
