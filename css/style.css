@@ -13,7 +13,6 @@ body {
     color: #333;
     animation: fadeInBody 1s ease;
 }
-}
 
 @keyframes fadeInBody {
     from {
@@ -25,25 +24,52 @@ body {
     }
 }
 
-/* Header */
+/* Header with blurred image background */
 header {
-    background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%);
+    position: relative;
     color: #fff;
     padding: 4rem 1rem 2rem 1rem;
-    /* Expanded header height and padding */
-    min-height: 120px;
-    /* Ensures header is visually larger */
+    min-height: 160px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 115, 230, 0.15);
-    position: relative;
     z-index: 2;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+/* Background image with blur */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("cover.jpg") center/cover no-repeat;
+    filter: blur(8px);
+    opacity: 0.6;
+    z-index: -2;
+}
+
+/* Gradient overlay for fade effect */
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%);
+    opacity: 0.7;
+    z-index: -1;
 }
 
 header h1 {
     margin: 0;
     font-family: Poppins, sans-serif;
+    position: relative;
+    z-index: 1;
 }
 
 nav a {
@@ -53,6 +79,7 @@ nav a {
     font-weight: bold;
     position: relative;
     transition: color 0.3s, transform 0.3s;
+    z-index: 1;
 }
 
 nav a::after {
@@ -85,7 +112,6 @@ main {
     max-width: 900px;
     margin: auto;
     animation: fadeInMain 1.2s ease;
-}
 }
 
 @keyframes fadeInMain {
@@ -130,7 +156,6 @@ footer {
     text-align: center;
     padding: 1rem;
 }
-}
 
 /* Contact form */
 form input,
@@ -141,6 +166,7 @@ form textarea {
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
 }
 
 form input:focus,
@@ -175,4 +201,21 @@ img {
 img:hover {
     transform: scale(1.04) rotate(-1deg);
     box-shadow: 0 4px 24px rgba(0, 115, 230, 0.12);
+}
+
+/* Contact form / table fix */
+form,
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    display: block;
+}
+
+table td,
+table th {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
 }
