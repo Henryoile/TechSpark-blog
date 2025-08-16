@@ -17,28 +17,40 @@
         });
     </script>
 </head>
-
-<body>
-    <header>
-        <h1>TechSpark</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<script>
+    // Highlight active nav link
+    document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+                link.classList.add('active');
+            }
+        });
+    });
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.querySelector('nav');
+        menuBtn.addEventListener('click', function () {
+            nav.classList.toggle('open');
+            menuBtn.classList.toggle('open');
+        });
+    });
+    </header >
 
     <main>
         <h2 style="animation: fadeInMain 1.2s;">All Blog Posts</h2>
         <article class="card">
             <h3><a href="posts/post1.html">Why Edge Computing is the Future of Data</a></h3>
-            <p>A breakdown of edge computing and its role in reducing latency.</p>
-        </article>
-        <article class="card">
-            <h3><a href="posts/post2.html">How AI is Transforming Everyday Apps</a></h3>
-            <p>Exploring real-world examples of AI in consumer apps.</p>
-        </article>
+                            <button id="menu-btn" aria-label="Open menu">
+                                <span></span><span></span><span></span>
+                            </button>
+                            <nav>
+                                    <a href="index.html">Home</a>
+                                    <a href="blog.html">Blog</a>
+                                    <a href="about.html">About</a>
+                                    <a href="contact.html">Contact</a>
+                            </nav>
         <article class="card">
             <h3><a href="posts/post3.html">The Rise of No-Code Tools for Developers</a></h3>
             <p>Discussing how no-code platforms empower faster prototyping.</p>
@@ -64,7 +76,7 @@
             text-decoration: underline;
         }
     </style>
-</body>
+</body >
 
 <style>
     .card {
@@ -75,14 +87,129 @@
     .card:hover {
         box-shadow: 0 8px 32px rgba(0, 115, 230, 0.18);
         transform: translateY(-4px) scale(1.01);
-    }
+                    </style>
+                    <style>
+                        header {
+                            background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%), url('images/cover.jpg') center/cover no-repeat;
+                            color: #fff;
+                            position: relative;
+                            overflow: hidden;
+                            padding-top: 1.5rem;
+                            padding-bottom: 1.5rem;
+                        }
+                        header::before {
+                            content: "";
+                            position: absolute;
+                            top: 0; left: 0; right: 0; bottom: 0;
+                            background: rgba(0, 0, 0, 0.45);
+                            z-index: 1;
+                        }
+                        header > * {
+                            position: relative;
+                            z-index: 2;
+                        }
+                        header h1, header nav a {
+                            text-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 0 2px #0073e6;
+                        }
+                        #menu-btn {
+                            display: none;
+                            background: none;
+                            border: none;
+                            position: absolute;
+                            top: 1.2rem;
+                            right: 1.2rem;
+                            z-index: 3;
+                            width: 40px;
+                            height: 40px;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                        }
+                        #menu-btn span {
+                            display: block;
+                            width: 30px;
+                            height: 4px;
+                            margin: 5px 0;
+                            background: #fff;
+                            border-radius: 2px;
+                            transition: 0.3s;
+                        }
+                        #menu-btn.open span:nth-child(1) {
+                            transform: translateY(9px) rotate(45deg);
+                        }
+                        #menu-btn.open span:nth-child(2) {
+                            opacity: 0;
+                        }
+                        #menu-btn.open span:nth-child(3) {
+                            transform: translateY(-9px) rotate(-45deg);
+                        }
+                        nav {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            align-items: center;
+                            transition: max-height 0.4s, opacity 0.4s;
+                        }
+                        @media (max-width: 700px) {
+                            header {
+                                padding-top: 1rem;
+                                padding-bottom: 1rem;
+                            }
+                            #menu-btn {
+                                display: flex;
+                            }
+                            nav {
+                                flex-direction: column;
+                                background: rgba(0,0,0,0.7);
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                right: 0;
+                                max-height: 0;
+                                opacity: 0;
+                                overflow: hidden;
+                                z-index: 2;
+                                border-bottom-left-radius: 30px;
+                                border-bottom-right-radius: 30px;
+                            }
+                            nav.open {
+                                max-height: 300px;
+                                opacity: 1;
+                                padding: 1rem 0;
+                            }
+                            nav a {
+                                padding: 1rem;
+                                font-size: 1.2rem;
+                            }
+                        }
+                        main {
+                            padding: 1rem;
+                        }
+                        @media (max-width: 500px) {
+                            h1 {
+                                font-size: 2rem;
+                            }
+                            h2 {
+                                font-size: 1.3rem;
+                            }
+                            .card {
+                                padding: 1rem;
+                            }
+                        }
+                        @media (min-width: 600px) {
+                            header {
+                                background-attachment: fixed;
+                            }
+                        }
+                    </style>
 
     a:hover {
-        text-decoration: underline;
+        text - decoration: underline;
     }
 
     header {
-        background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%), url('images/cover.jpg') center/cover no-repeat;
+        background: linear - gradient(90deg, #0073e6 60 %, #00c6fb 100 %), url('images/cover.jpg') center / cover no - repeat;
         color: #fff;
         position: relative;
         overflow: hidden;
@@ -96,22 +223,22 @@
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.45);
-        z-index: 1;
+        z - index: 1;
     }
 
-    header>* {
+    header >* {
         position: relative;
-        z-index: 2;
+        z- index: 2;
     }
 
     header h1,
-    header nav a {
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 0 2px #0073e6;
+        header nav a {
+        text - shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 0 2px #0073e6;
     }
 
-    @media (min-width: 600px) {
+    @media(min - width: 600px) {
         header {
-            background-attachment: fixed;
+            background - attachment: fixed;
         }
     }
-</style>
+</style >
