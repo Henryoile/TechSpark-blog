@@ -60,4 +60,52 @@
     </style>
 </body>
 
-</html>
+<style>
+    .card {
+        transition: box-shadow 0.3s, transform 0.3s;
+        position: relative;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 32px rgba(0, 115, 230, 0.18);
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    header {
+        background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%), url('../images/cover.jpg') center/cover no-repeat;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1;
+    }
+
+    header>* {
+        position: relative;
+        z-index: 2;
+    }
+
+    header h1,
+    header nav a {
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 0 2px #0073e6;
+    }
+
+    @media (min-width: 600px) {
+        header {
+            background-attachment: fixed;
+        }
+    }
+</style>
