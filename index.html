@@ -38,43 +38,28 @@
             });
         });
     </script>
-</head>
-
-<body>
-    <header>
-        <h1>TechSpark</h1>
-        <button id="menu-btn" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <main>
-        <h2 style="animation: fadeInMain 1.2s;">Latest Posts</h2>
-        <article class="card">
-            <h3><a href="posts/post1.html">Why Edge Computing is the Future of Data</a></h3>
-            <p>A breakdown of edge computing and its role in reducing latency.</p>
-        </article>
-        <article class="card">
-            <h3><a href="posts/post2.html">How AI is Transforming Everyday Apps</a></h3>
-            <p>Exploring real-world examples of AI in consumer apps.</p>
-        </article>
-        <article class="card">
-            <h3><a href="posts/post3.html">The Rise of No-Code Tools for Developers</a></h3>
-            <p>Discussing how no-code platforms empower faster prototyping.</p>
-        </article>
-    </main>
-
-    <footer>
-        <p>© 2025 TechSpark | Igniting ideas in technology</p>
-    </footer>
-
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        footer {
+            flex-shrink: 0;
+            text-align: center;
+            background: linear-gradient(90deg, #222 60%, #444 100%);
+            color: #fff;
+            padding: 1.5rem 1rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0 -2px 8px rgba(34, 34, 34, 0.12);
+        }
+
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -246,6 +231,41 @@
             }
         }
     </style>
+</head>
+
+<body>
+    <header>
+        <h1>TechSpark</h1>
+        <button id="menu-btn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="animation: fadeInMain 1.2s;">Latest Posts</h2>
+        <article class="card">
+            <h3><a href="posts/post1.html">Why Edge Computing is the Future of Data</a></h3>
+            <p>A breakdown of edge computing and its role in reducing latency.</p>
+        </article>
+        <article class="card">
+            <h3><a href="posts/post2.html">How AI is Transforming Everyday Apps</a></h3>
+            <p>Exploring real-world examples of AI in consumer apps.</p>
+        </article>
+        <article class="card">
+            <h3><a href="posts/post3.html">The Rise of No-Code Tools for Developers</a></h3>
+            <p>Discussing how no-code platforms empower faster prototyping.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2025 TechSpark | Igniting ideas in technology</p>
+    </footer>
 </body>
 
 </html>
