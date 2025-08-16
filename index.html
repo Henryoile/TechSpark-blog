@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechSpark | Igniting ideas in technology</title>
     <link rel="stylesheet" href="css/style.css">
+
     <script>
         // Highlight active nav link
         document.addEventListener('DOMContentLoaded', function () {
@@ -16,6 +17,7 @@
                 }
             });
         });
+
         // Ripple effect for buttons
         document.addEventListener('click', function (e) {
             if (e.target.tagName === 'BUTTON') {
@@ -28,6 +30,7 @@
                 setTimeout(() => ripple.remove(), 600);
             }
         });
+
         // Hamburger menu toggle
         document.addEventListener('DOMContentLoaded', function () {
             const menuBtn = document.getElementById('menu-btn');
@@ -38,6 +41,7 @@
             });
         });
     </script>
+
     <style>
         body {
             display: flex;
@@ -47,6 +51,7 @@
 
         main {
             flex: 1 0 auto;
+            padding: 1rem;
         }
 
         footer {
@@ -60,6 +65,7 @@
             box-shadow: 0 -2px 8px rgba(34, 34, 34, 0.12);
         }
 
+        /* Ripple effect */
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -79,9 +85,14 @@
             }
         }
 
+        /* Cards */
         .card {
             transition: box-shadow 0.3s, transform 0.3s;
             position: relative;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
         }
 
         .card:hover {
@@ -93,13 +104,16 @@
             text-decoration: underline;
         }
 
+        /* Sticky Header */
         header {
-            background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%), url('images/cover.jpg') center/cover no-repeat;
             color: #fff;
-            position: relative;
+            position: sticky;
+            /* 🔥 makes header stick */
+            top: 0;
+            z-index: 1000;
             overflow: hidden;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
+            padding: 1.2rem 0;
+            background: url('images/cover.jpg') center/cover no-repeat;
         }
 
         header::before {
@@ -123,6 +137,12 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 0 2px #0073e6;
         }
 
+        /* Shrink header on scroll */
+        header.shrink {
+            padding: 0.6rem 0;
+        }
+
+        /* Hamburger */
         #menu-btn {
             display: none;
             background: none;
@@ -161,6 +181,7 @@
             transform: translateY(-9px) rotate(-45deg);
         }
 
+        /* Nav */
         nav {
             display: flex;
             gap: 1rem;
@@ -170,11 +191,6 @@
         }
 
         @media (max-width: 700px) {
-            header {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-            }
-
             #menu-btn {
                 display: flex;
             }
@@ -206,10 +222,6 @@
             }
         }
 
-        main {
-            padding: 1rem;
-        }
-
         @media (max-width: 500px) {
             h1 {
                 font-size: 2rem;
@@ -224,15 +236,26 @@
             }
         }
 
-        /* Parallax effect on scroll */
+        /* Parallax on bigger screens */
         @media (min-width: 600px) {
             header {
                 background-attachment: fixed;
             }
         }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("shrink");
+        } else {
+            header.classList.remove("shrink");
+        }
+    });
+</script>
+
 
 <body>
     <header>
@@ -247,6 +270,7 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
+
     <main>
         <h2 style="animation: fadeInMain 1.2s;">Latest Posts</h2>
         <article class="card">
@@ -262,9 +286,22 @@
             <p>Discussing how no-code platforms empower faster prototyping.</p>
         </article>
     </main>
+
     <footer>
         <p>© 2025 TechSpark | Igniting ideas in technology</p>
     </footer>
+
+    <script>
+        // Shrink header on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+    </script>
 </body>
 
 </html>
