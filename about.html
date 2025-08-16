@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | TechSpark</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>TechSpark</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="animation: fadeInMain 1.2s;">About TechSpark</h2>
+        <article class="card">
+            <p>TechSpark is a blog dedicated to sharing fresh perspectives and practical knowledge in technology. From
+                emerging trends to hands-on tutorials, TechSpark brings clear and engaging content to help developers
+                and enthusiasts stay inspired and informed.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2025 TechSpark</p>
+    </footer>
+
+    <style>
+        .card {
+            transition: box-shadow 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(0, 115, 230, 0.18);
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+
+</html>
