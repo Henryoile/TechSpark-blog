@@ -67,28 +67,7 @@
             transform: translateY(-4px) scale(1.01);
         }
 
-        a:hover {
-            text-decoration: underline;
-        }
-
-        header {
-            background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%), url('css/cover.jpg') center/cover no-repeat;
-            color: #fff;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            overflow: hidden;
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem;
-            transition: padding 0.3s, box-shadow 0.3s;
-        }
-
-        header.shrink {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-        }
+        /* Removed misplaced script tag from style block */
 
         header::before {
             content: "";
@@ -155,9 +134,20 @@
             justify-content: center;
             align-items: center;
             transition: max-height 0.4s, opacity 0.4s;
-        }
 
-        @media (max-width: 700px) {
+            header {
+                background: url('images/cover.jpg') center/cover no-repeat;
+                color: #fff;
+                position: sticky;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+                overflow: hidden;
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+                transition: padding 0.3s, box-shadow 0.3s;
+            }
+
             header {
                 padding-top: 1rem;
                 padding-bottom: 1rem;
@@ -246,5 +236,6 @@
         <p>© 2025 TechSpark Blog</p>
     </footer>
 </body>
+<script src="script.js"></script>
 
 </html>

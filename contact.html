@@ -6,47 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | TechSpark</title>
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        // Sticky shrink header on scroll
-        window.addEventListener('scroll', function () {
-            const header = document.querySelector('header');
-            if (window.scrollY > 40) {
-                header.classList.add('shrink');
-            } else {
-                header.classList.remove('shrink');
-            }
-        });
-        // Highlight active nav link
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                if (window.location.pathname.endsWith(link.getAttribute('href'))) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        // Ripple effect for buttons
-        document.addEventListener('click', function (e) {
-            if (e.target.tagName === 'BUTTON') {
-                const btn = e.target;
-                const ripple = document.createElement('span');
-                ripple.className = 'ripple';
-                ripple.style.left = e.offsetX + 'px';
-                ripple.style.top = e.offsetY + 'px';
-                btn.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
-            }
-        });
-        // Hamburger menu toggle
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuBtn = document.getElementById('menu-btn');
-            const nav = document.querySelector('nav');
-            menuBtn.addEventListener('click', function () {
-                nav.classList.toggle('open');
-                menuBtn.classList.toggle('open');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
     <style>
         .ripple {
             position: absolute;
@@ -82,7 +42,7 @@
         }
 
         header {
-            background: linear-gradient(90deg, #0073e6 60%, #00c6fb 100%), url('css/cover.jpg') center/cover no-repeat;
+            background: url('images/cover.jpg') center/cover no-repeat;
             color: #fff;
             position: sticky;
             top: 0;
